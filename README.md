@@ -1,66 +1,31 @@
-## Foundry
+# Foundry Stablecoin
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Introduction
 
-Foundry consists of:
+This is a system designed to maintain a stablecoin with a 1 token = $1 peg. It operates with the following key properties:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- Exogenous Collateral
+- Dollar Pegged
+- Algorithmically Stable
 
-## Documentation
+It is akin to DAI, but without governance, fees, and solely backed by WETH and WBTC.
 
-https://book.getfoundry.sh/
+## Overview
 
-## Usage
+The DSCEngine ensures that the stablecoin, termed DSC, remains overcollateralized at all times. This means that the total value of collateral should always exceed the value of all DSC in circulation.
 
-### Build
+## Functionality
 
-```shell
-$ forge build
-```
+This contract serves as the core of the DSC System, handling various functionalities including:
 
-### Test
+- Mining and redeeming DSCm
+- Depositing and withdrawing collateral
 
-```shell
-$ forge test
-```
+## Acknowledgement
 
-### Format
+This contract draws inspiration from the MakerDAO DSS (DAI) system but operates with a distinct approach and set of features.
 
-```shell
-$ forge fmt
-```
+## Notice
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This repo is based on Patrick Collins Solidity Course.
+https://www.youtube.com/watch?v=wUjYK5gwNZs&t=4981s
